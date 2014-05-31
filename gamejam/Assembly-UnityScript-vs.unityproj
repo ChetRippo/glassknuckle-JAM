@@ -46,9 +46,9 @@
 	</Reference>
   </ItemGroup>
   <ItemGroup>
-     <Compile Include="Assets\menu.js" />
-     <None Include="Assets\Art Assets\Other\placeholder.txt" />
-     <None Include="Assets\Art Assets\Animals\placeholder.txt" />
+     <Compile Include="Assets\Scripts\animal.js" />
+     <Compile Include="Assets\Scripts\date.js" />
+     <Compile Include="Assets\Scripts\panda.js" />
  <Reference Include="Assembly-UnityScript-firstpass">
  <HintPath>/Users/kylefleischer/Documents/Projects/glassknuckle-JAM/gamejam/Library/ScriptAssemblies/Assembly-UnityScript-firstpass.dll</HintPath>
  </Reference>

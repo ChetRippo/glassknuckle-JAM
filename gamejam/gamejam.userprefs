@@ -1,9 +1,9 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/menu.js">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/panda.js">
     <Files>
-      <File FileName="Assets/menu.js" Line="14" Column="4" />
-      <File FileName="Assets/Standard Assets/Scripts/General Scripts/DragRigidbody.js" Line="1" Column="1" />
+      <File FileName="Assets/Scripts/panda.js" Line="5" Column="8" />
+      <File FileName="Assets/Scripts/date.js" Line="20" Column="70" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
