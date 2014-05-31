@@ -1,8 +1,7 @@
 glassknuckle-JAM
 ================
 
-GAME JAM GAME JAM GAME JAM
-JAM TIME
+Welcome to the Sweetheart Safari!
 
 git commit -am "blah"
 git push
