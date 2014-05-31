@@ -3,7 +3,7 @@ var stylefont : Font;
 var style : GUIStyle;
 var pos : int = 0;
 var vocal : String = "har";
-var lover : String = "panda";
+var lover : String = "dnady";
 function Start () {
 	style.normal.textColor = Color.white;
 	style.fontSize = 26;
