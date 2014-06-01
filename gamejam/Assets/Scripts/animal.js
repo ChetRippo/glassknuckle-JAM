@@ -2,5 +2,9 @@
 
 public class animal extends MonoBehaviour
 {
-    var dialog : Array;
+	var animalName : String;
+	var normalSprite : Sprite;
+    var dialog : String[];
+    var prompts : Array;
+    var prompt0 : String[];
 }

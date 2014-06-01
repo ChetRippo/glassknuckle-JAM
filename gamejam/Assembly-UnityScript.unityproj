@@ -49,8 +49,11 @@
      <Compile Include="Assets\Scripts\animal.js" />
      <Compile Include="Assets\Scripts\button.js" />
      <Compile Include="Assets\Scripts\date.js" />
+     <Compile Include="Assets\Scripts\owl.js" />
      <Compile Include="Assets\Scripts\panda.js" />
      <Compile Include="Assets\Scripts\player.js" />
+     <Compile Include="Assets\dolphin.js" />
+     <Compile Include="Assets\mapNav.js" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Assembly-CSharp-firstpass.csproj">
