@@ -28,7 +28,7 @@ function Start () {
 
 function OnGUI() {
 	if (GetComponent(date).currentDate == animalName){
-		action = true;
+		GetComponent(date).action = true;
 		if (playerObject.GetComponent(player).levelBurger == 0){
 			if (GetComponent(date).pos == 0){
 				GetComponent(date).vocal = "For some reason, this burger looks absolutely delectable.";
@@ -85,22 +85,27 @@ function OnGUI() {
 			}
 			if (GetComponent(date).pos == 13) {
 				GetComponent(date).vocal = "…";
+				GetComponent(date).action = false;
 			}
 			if (GetComponent(date).pos == 14) {
 				GetComponent(date).vocal = "Is…the hamburger trying to communicate with you?";
 				GetComponent(date).dateSprite = blushSprite;
+				GetComponent(date).action = true;
 			}
 			if (GetComponent(date).pos == 15) {
 				GetComponent(date).vocal = "…";
+				GetComponent(date).action = false;
 			}
 			if (GetComponent(date).pos == 16) {
 				GetComponent(date).vocal = "Strange…the burger seems incapable of human speech, but you feel…warm inside.";
+				GetComponent(date).action = true;
 			}
 			if (GetComponent(date).pos == 17) {
 				GetComponent(date).vocal = "Never have you felt so comfortable around a sandwich before.";
 			}
 			if (GetComponent(date).pos == 18) {
 				GetComponent(date).vocal = "…";
+				GetComponent(date).action = false;
 				GetComponent(date).dateSprite = blushSprite;
 			}
 			if (GetComponent(date).pos == 19) {
@@ -221,6 +226,8 @@ function OnGUI() {
 		} else if (playerObject.GetComponent(player).levelBurger == 1){
 			if (GetComponent(date).pos == 0) {
 				GetComponent(date).vocal = "A pleasant energy emanates from within the burger's toppings.";
+				GetComponent(date).dateSprite = normalSprite;
+				GetComponent(date).bkgSprite = animalBackground;
 			}
 			if (GetComponent(date).pos == 1) {
 				GetComponent(date).vocal = "Will you go on another strange burg-related journey?";
