@@ -1,53 +1,75 @@
 ﻿#pragma strict
 var stylefont : Font;
 var player : GameObject;
+var textboxObject : GameObject;
+var dialogBox : Sprite;
+var actionBox : Sprite;
+var action : boolean = false;
+var promptObject : GameObject;
 var style : GUIStyle;
+var promptStyle : GUIStyle;
 var pos : int = 0;
+var currentDate : String;
 var dateSprite : Sprite;
 var vocal : String;
-var lover : String;
+var prompt = false;
 var temp : float;
+var bkgObject : GameObject;
+var bkgSprite : Sprite;
+var promptX : float;
+var prompt1Y : float;
+var promptGap : float;
+var promptW : float;
+var promptH : float;
 
-private var windowPrompt : boolean = false;
+private var textIndex : int = 0;
+private var prevVocal : String;
 
 function Start () {
-	lover = (player.GetComponent("player") as player).currentAnimal;
-	dateSprite = (GetComponent(lover) as animal).normalSprite;
+	player = GameObject.Find("PlayerObject");
+	currentDate = (player.GetComponent("player") as player).currentAnimal;
 	style.normal.textColor = Color.white;
 	style.font = stylefont;
 	style.wordWrap = true;
-	GetComponent(SpriteRenderer).sprite = dateSprite;
+	promptStyle.normal.textColor = Color.white;
+	promptStyle.font = stylefont;
+	promptStyle.fontSize = Screen.width/29.53f;
+	promptX = Screen.width/1.56f;
+	prompt1Y = Screen.height/14.66f;
+	promptGap = Screen.height/38.68;
+	promptW = Screen.width/1.9f;
+	promptH = Screen.height/21.2f;
 }
 
 function OnGUI () {
-	style.fontSize = Screen.width/26.53f;
-	var speaker : animal = (GetComponent(lover) as animal);
-	var spoken : String = (GetComponent(lover) as animal).dialog[pos+1];
-	GUI.Label (Rect (Screen.width/21.02f, Screen.height/1.47f,650,40),(GetComponent(lover) as animal).animalName,style);
-	GUI.Label (Rect (Screen.width/20.83f, Screen.height/1.3f,650,40),vocal,style);
-	//GUI.backgroundColor = new Color(0,0,0,0);
-	if (GUI.Button(Rect(Screen.width/70.7f,Screen.height/1.6f,Screen.width/1.03f,Screen.height/2.39f),"") 
-				&& pos < (GetComponent(lover) as animal).dialog.length-1 && !windowPrompt) {
-		if (spoken.Substring(0,6) == "prompt"){
-			Debug.Log(speaker);
-			windowPrompt = true;
-		} else {
-			pos++;
-			vocal = (GetComponent(lover) as animal).dialog[pos];
-		}
+	if (prevVocal != vocal){
+		textIndex = 0;
+		prevVocal = vocal;
 	}
-	if(windowPrompt){
-		var poopy : int = spoken[6];
-		poopy-=48;
-		//Debug.Log(poopy);
-		if (GUI.Button(Rect(10,10,100,100),(speaker.prompts[poopy] as String[])[0])){
-			windowPrompt = false;
-			pos = 6;
-			vocal = (GetComponent(lover) as animal).dialog[pos];
-		}
+	style.fontSize = Screen.width/26.53f;
+	var drawnString : String = vocal.Substring(0,textIndex);
+	GUI.Label (Rect (Screen.width/20.83f, Screen.height/1.3f,650,40),drawnString,style);
+	if (Time.deltaTime > .016f && textIndex < vocal.Length){
+		textIndex++;
+	}
+	GUI.backgroundColor = new Color(0,0,0,0);
+	if (GUI.Button(Rect(Screen.width/70.7f,Screen.height/1.6f,Screen.width/1.03f,Screen.height/2.39f),"") && !prompt) {
+		pos++;
+	}
+	if (prompt) {
+		promptObject.active = true;
+	} else {
+		promptObject.active = false;
+	}
+	if (action) {
+		textboxObject.GetComponent(SpriteRenderer).sprite = actionBox;
+	} else {
+		textboxObject.GetComponent(SpriteRenderer).sprite = dialogBox;
+		GUI.Label (Rect (Screen.width/21.02f, Screen.height/1.47f,650,40),currentDate,style);
 	}
 }
 
 function Update () {
-	
+	GetComponent(SpriteRenderer).sprite = dateSprite;
+	bkgObject.GetComponent(SpriteRenderer).sprite = bkgSprite;
 }

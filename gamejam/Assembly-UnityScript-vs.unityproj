@@ -52,6 +52,7 @@
      <Compile Include="Assets\Scripts\owl.js" />
      <Compile Include="Assets\Scripts\panda.js" />
      <Compile Include="Assets\Scripts\player.js" />
+     <Compile Include="Assets\Scripts\titleScreen.js" />
      <Compile Include="Assets\dolphin.js" />
      <Compile Include="Assets\mapNav.js" />
  <Reference Include="Assembly-UnityScript-firstpass">

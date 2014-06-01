@@ -7,7 +7,7 @@ var locPit : Sprite;
 var locForest : Sprite;
 var locPool : Sprite;
 var locSav : Sprite;
-var tempPos : float;
+var temp : float;
 
 var panda : Texture;
 var dolphin : Texture;
@@ -25,46 +25,45 @@ var elephant : Texture;
 var hippo : Texture;
 var flamingo : Texture;
 function Start () {
+	player = GameObject.Find("PlayerObject");
 	currentLocation = locMap;
 	GetComponent(SpriteRenderer).sprite = currentLocation;
 }
-/*function animalObject (animal,x,y,scale) {
-	GUI.backgroundColor = new Color(0,0,0,0);
-	if (GUI.Button(Rect(x,y,scale,scale),animal)){
-		(player.GetComponent("player") as player).currentAnimal = animal;
-		Application.LoadLevel ("dateScene");
-	}
-}*/
 function OnGUI() {
-	//GUI.backgroundColor = new Color(0,0,0,0);
+	GUI.backgroundColor = new Color(0,0,0,0);
 	if (currentLocation == locMap){
 		if (GUI.Button(Rect(Screen.width/2.15f,Screen.height/5.27f,Screen.width/7.68f,Screen.height/4.25f),"")){
 			currentLocation = locCafe;
 			GetComponent(SpriteRenderer).sprite = currentLocation;
 		}
-		if (GUI.Button(Rect(467,21,78,50),"")){
+		if (GUI.Button(Rect(Screen.width/1.6f,Screen.height/25.81,Screen.width/8.35f,Screen.height/6.73f),"")){
 			currentLocation = locPit;
 			GetComponent(SpriteRenderer).sprite = currentLocation;
 		}
-		if (GUI.Button(Rect(104,85,164,101),"")){
+		if (GUI.Button(Rect(Screen.width/10.18f,Screen.height/7.42f,Screen.width/3.38f,Screen.height/2.76f),"")){
 			currentLocation = locForest;
 			GetComponent(SpriteRenderer).sprite = currentLocation;
 		}
-		if (GUI.Button(Rect(455,121,145,95),"")){
+		if (GUI.Button(Rect(Screen.width/1.65f,Screen.height/3.69f,Screen.width/4.49f,Screen.height/3.17f),"")){
 			currentLocation = locPool;
 			GetComponent(SpriteRenderer).sprite = currentLocation;
 		}
-		if (GUI.Button(Rect(232,193,194,95),"")){
+		if (GUI.Button(Rect(Screen.width/3.23f,Screen.height/2f,Screen.width/3.59f,Screen.height/4.68f),"")){
 			currentLocation = locSav;
 			GetComponent(SpriteRenderer).sprite = currentLocation;
 		}
 	}
 	if (currentLocation == locCafe) {
 		if (GUI.Button(Rect(389,105,217,217),panda)){
-			(player.GetComponent("player") as player).currentAnimal = "panda";
+			(player.GetComponent("player") as player).currentAnimal = "Panda";
 			Application.LoadLevel ("dateScene");
-			}
-		//animalObject(panda,10,10,200);
+		}
+	}
+	if (currentLocation == locPool) {
+		if (GUI.Button(Rect(Screen.width/1.6,Screen.height/2.21,Screen.width/3.14,Screen.width/3.14),dolphin)){
+			(player.GetComponent("player") as player).currentAnimal = "Dolphin";
+			Application.LoadLevel ("dateScene");
+		}
 	}
 }
 function Update () {

@@ -1,0 +1,60 @@
+#pragma strict
+var playerObject : GameObject;
+var animalName : String = "@@";
+var normalSprite : Sprite;
+var angrySprite : Sprite;
+var blushSprite : Sprite;
+var costumeSprite : Sprite;
+var animalBackground : Sprite;
+var choice : int;
+var promptStyle : GUIStyle;
+var promptX : float;
+var prompt1Y : float;
+var prompt2Y : float;
+var prompt3Y : float;
+var promptW : float;
+var promptH : float;
+
+function Start () {
+	playerObject = GameObject.Find("PlayerObject");
+	GetComponent(date).dateSprite = normalSprite;
+	GetComponent(date).bkgSprite = animalBackground;
+	promptStyle = GetComponent(date).promptStyle;
+}
+
+function OnGUI() {
+	if (playerObject.GetComponent(player).level@@ == 0){
+		if (GetComponent(date).pos == 0){
+			GetComponent(date).dateSprite = normalSprite;
+			GetComponent(date).vocal = "";
+			GetComponent(date).action = false;
+		}
+		if (GetComponent(date).pos == 2) {
+			GetComponent(date).vocal = "> ";
+			GetComponent(date).action = true;
+			GetComponent(date).prompt = true;
+			if (GUI.Button(Rect(promptX,prompt1Y,promptW,promptH),"Yes",promptStyle)){
+				GetComponent(date).pos++;
+				GetComponent(date).prompt = false;
+			}
+			if (GUI.Button(Rect(promptX,prompt2Y,promptW,promptH),"No",promptStyle)){
+				GetComponent(date).prompt = false;
+				Application.LoadLevel ("map");
+			}
+		}
+	}
+}
+	} else if (playerObject.GetComponent(player).level@@ == 1){
+		if (GetComponent(date).pos == 1) {
+			GetComponent(date).vocal = "";
+		}
+	}
+}
+function Update () {
+	promptW = GetComponent(date).promptW;
+	promptH = GetComponent(date).promptH;
+	promptX = GetComponent(date).promptX;
+	prompt1Y = GetComponent(date).prompt1Y;
+	prompt2Y = prompt1Y + GetComponent(date).promptGap + promptH;
+	prompt3Y = prompt2Y + GetComponent(date).promptGap + promptH;
+}
