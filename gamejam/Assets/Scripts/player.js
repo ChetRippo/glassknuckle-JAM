@@ -2,6 +2,7 @@
 var currentAnimal : String;
 var levelDolphin : int = 0;
 var levelPanda : int = 0;
+var levelBurger : int = 0;
 
 function Start () {
 	DontDestroyOnLoad (transform.gameObject);

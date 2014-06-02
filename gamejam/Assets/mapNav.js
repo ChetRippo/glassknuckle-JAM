@@ -58,6 +58,10 @@ function OnGUI() {
 			(player.GetComponent("player") as player).currentAnimal = "Panda";
 			Application.LoadLevel ("dateScene");
 		}
+		if (GUI.Button(Rect(100,105,217,217),burger)){
+			(player.GetComponent("player") as player).currentAnimal = "Burger";
+			Application.LoadLevel ("dateScene");
+		}
 	}
 	if (currentLocation == locPool) {
 		if (GUI.Button(Rect(Screen.width/1.6,Screen.height/2.21,Screen.width/3.14,Screen.width/3.14),dolphin)){
