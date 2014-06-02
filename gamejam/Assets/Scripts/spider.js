@@ -33,7 +33,7 @@ function OnGUI() {
 				GetComponent(date).vocal = "???";
 			}
 			if (GetComponent(date).pos == 1) {
-				GetComponent(date).vocal = "Will you spend time with Spider?";
+				GetComponent(date).vocal = "> Will you spend time with Spider?";
 				GetComponent(date).action = true;
 				GetComponent(date).prompt = true;
 				if (GUI.Button(Rect(promptX,prompt1Y,promptW,promptH),"Yes",promptStyle)){
@@ -47,10 +47,10 @@ function OnGUI() {
 			}
 			if (GetComponent(date).pos == 2) {
 				GetComponent(date).vocal = "!!!";
+				GetComponent(date).action = false;
 			}
 			if (GetComponent(date).pos == 3) {
 				GetComponent(date).vocal = "…";
-				GetComponent(date).action = true;
 				GetComponent(date).prompt = true;
 				if (GUI.Button(Rect(promptX,prompt1Y,promptW,promptH),"So…come here often? To this spider pit?",promptStyle)){
 					GetComponent(date).pos++;
@@ -106,16 +106,19 @@ function OnGUI() {
 				GetComponent(date).vocal = ":)";
 			}
 			if (GetComponent(date).pos == 14) {
-				GetComponent(date).vocal = "You feel a deeper connection with Spider.";
+				GetComponent(date).vocal = "> You feel a deeper connection with Spider.";
+				GetComponent(date).action = true;
 			}
 			if (GetComponent(date).pos == 15) {
-				GetComponent(date).vocal = "It might be in your best interest to continue seeing it.";
+				GetComponent(date).vocal = "> It might be in your best interest to continue seeing it.";
+				GetComponent(date).action = true;
 			}
 			if (GetComponent(date).pos == 16) {
-				GetComponent(date).vocal = "Besides, it has a pretty sweet pit…";
+				GetComponent(date).vocal = "> Besides, it has a pretty sweet pit…";
+				GetComponent(date).action = true;
 			}
 			if (GetComponent(date).pos == 17) {
-				GetComponent(date).vocal = "Will you ask Spider out?";
+				GetComponent(date).vocal = "> Will you ask Spider out?";
 				GetComponent(date).action = true;
 				GetComponent(date).prompt = true;
 				if (GUI.Button(Rect(promptX,prompt1Y,promptW,promptH),"Yes",promptStyle)){
@@ -131,6 +134,7 @@ function OnGUI() {
 			}
 			if (GetComponent(date).pos == 18) {
 				GetComponent(date).vocal = "……";
+				GetComponent(date).action = false;
 			}
 			if (GetComponent(date).pos == 19) {
 				GetComponent(date).vocal = "…………..";
@@ -151,13 +155,16 @@ function OnGUI() {
 				GetComponent(date).vocal = ":* ~~~";
 			}
 			if (GetComponent(date).pos == 25) {
-				GetComponent(date).vocal = "You seem to have forged a relationship with Spider.";
+				GetComponent(date).vocal = "> You seem to have forged a relationship with Spider.";
+				GetComponent(date).action = true;
 			}
 			if (GetComponent(date).pos == 26) {
-				GetComponent(date).vocal = "Then again, it could be thinking anything right now.";
+				GetComponent(date).vocal = "> Then again, it could be thinking anything right now.";
+				GetComponent(date).action = true;
 			}
 			if (GetComponent(date).pos == 27) {
-				GetComponent(date).vocal = "You decide to assume the best and make a timely exit.";
+				GetComponent(date).vocal = "> You decide to assume the best and make a timely exit.";
+				GetComponent(date).action = true;
 			}
 			if (GetComponent(date).pos == 28) {
 				GetComponent(date).vocal = "butthump";
@@ -167,6 +174,7 @@ function OnGUI() {
 			
 			if (GetComponent(date).pos == 29) {
 				GetComponent(date).vocal = "…..";
+				GetComponent(date).action = false;
 			}
 			if (GetComponent(date).pos == 30) {
 				GetComponent(date).vocal = "?????";
@@ -181,13 +189,16 @@ function OnGUI() {
 				GetComponent(date).vocal = ":( :( :(";
 			}
 			if (GetComponent(date).pos == 34) {
-				GetComponent(date).vocal = "You seem to have upset Spider.";
+				GetComponent(date).vocal = "> You seem to have upset Spider.";
+				GetComponent(date).action = true;
 			}
 			if (GetComponent(date).pos == 35) {
-				GetComponent(date).vocal = "Then again, it could be thinking anything right now.";
+				GetComponent(date).vocal = "> Then again, it could be thinking anything right now.";
+				GetComponent(date).action = true;
 			}
 			if (GetComponent(date).pos == 36) {
-				GetComponent(date).vocal = "Best to leave now before it decides to eat you or something.";
+				GetComponent(date).vocal = "> Best to leave now before it decides to eat you or something.";
+				GetComponent(date).action = true;
 			}
 			if (GetComponent(date).pos == 37){
 				GetComponent(date).vocal = "fuggin piss";
@@ -197,12 +208,13 @@ function OnGUI() {
 		}else if (playerObject.GetComponent(player).levelSpider == 1){
 			if (GetComponent(date).pos == 0){
 				GetComponent(date).vocal = "….";
+				GetComponent(date).action = false;
 			}
 			if (GetComponent(date).pos == 1) {
 				GetComponent(date).vocal = ":3";
 			}
 			if (GetComponent(date).pos == 2) {
-				GetComponent(date).vocal = "Will you spend time with Spider?";
+				GetComponent(date).vocal = "> Will you spend time with Spider?";
 				GetComponent(date).action = true;
 				GetComponent(date).prompt = true;
 				if (GUI.Button(Rect(promptX,prompt1Y,promptW,promptH),"Yes",promptStyle)){
@@ -215,6 +227,7 @@ function OnGUI() {
 				}
 			}
 			if (GetComponent(date).pos == 3) {
+				GetComponent(date).action = false;
 				GetComponent(date).vocal = "*blush*";
 				GetComponent(date).dateSprite = normalSprite;
 			}
@@ -228,16 +241,19 @@ function OnGUI() {
 				GetComponent(date).vocal = ";)";
 			}
 			if (GetComponent(date).pos == 7) {
-				GetComponent(date).vocal = "Uhoh…You get the feeling that Spider wants to forge a tryst.";
+				GetComponent(date).vocal = "> Uhoh…You get the feeling that Spider wants to forge a tryst.";
+				GetComponent(date).action = true;
 			}
 			if (GetComponent(date).pos == 8) {
-				GetComponent(date).vocal = "You're into it, but…this soon?";
+				GetComponent(date).vocal = "> You're into it, but…this soon?";
+				GetComponent(date).action = true;
 			}
 			if (GetComponent(date).pos == 9) {
-				GetComponent(date).vocal = "What will you do?";
+				GetComponent(date).vocal = "> What will you do?";
+				GetComponent(date).action = true;
 			}
 			if (GetComponent(date).pos == 10) {
-				GetComponent(date).vocal = "…NAME, WHAT WILL YOU DO?!";
+				GetComponent(date).vocal = "> …NAME, WHAT WILL YOU DO?!";
 				GetComponent(date).action = true;
 				GetComponent(date).prompt = true;
 				if (GUI.Button(Rect(promptX,prompt1Y,promptW,promptH),"Go for it.",promptStyle)){
@@ -259,6 +275,7 @@ function OnGUI() {
 
 			if (GetComponent(date).pos == 11) {
 				GetComponent(date).vocal = "!!!!!!!!";
+				GetComponent(date).action = false;
 			}
 
 			if (GetComponent(date).pos == 12) {
@@ -268,32 +285,39 @@ function OnGUI() {
 				GetComponent(date).vocal = "…";
 			}
 			if (GetComponent(date).pos == 14) {
-				GetComponent(date).vocal = "You went for it.";
+				GetComponent(date).vocal = "> You went for it.";
+				GetComponent(date).action = true;
 			}
 			
 			if (GetComponent(date).pos == 15) {
 				if(choice == 1){
 					GetComponent(date).pos = 28;
 				}
-				GetComponent(date).vocal = "????";
+				GetComponent(date).vocal = "????"
+				GetComponent(date).action = false;
 			}
 			if (GetComponent(date).pos == 16) {
+				GetComponent(date).action = false;
 				GetComponent(date).vocal = "….";
 			}
 			if (GetComponent(date).pos == 17) {
 				GetComponent(date).vocal = "!!!!";
 			}
 			if (GetComponent(date).pos == 18) {
-				GetComponent(date).vocal = "Spider seems apologetic.";
+				GetComponent(date).vocal = "> Spider seems apologetic.";
+				GetComponent(date).action = true;
 			}
 			if (GetComponent(date).pos == 19) {
-				GetComponent(date).vocal = "After explaining where you stand on such issues, Spider understands you more.";
+				GetComponent(date).vocal = "> After explaining where you stand on such issues, Spider understands you more.";
+				GetComponent(date).action = true;
 			}
 			if (GetComponent(date).pos == 20) {
-				GetComponent(date).vocal = "You feel like the two of you had a very respectful dialog.";
+				GetComponent(date).vocal = "> You feel like the two of you had a very respectful dialog.";
+				GetComponent(date).action = true;
 			}
 			if (GetComponent(date).pos == 21) {
-				GetComponent(date).vocal = "Remember, kids: Don't let anyone pressure you. Especially Billy from math class.";
+				GetComponent(date).vocal = "> Remember, kids: Don't let anyone pressure you. Especially Billy from math class.";
+				GetComponent(date).action = true;
 			}
 			
 			
@@ -301,32 +325,40 @@ function OnGUI() {
 				if(choice == 2){
 					GetComponent(date).pos = 28;
 				}
-				GetComponent(date).vocal = "You raise your arm high, ready to bash and rip and tear at Spider.";
+				GetComponent(date).vocal = "> You raise your arm high, ready to bash and rip and tear at Spider.";
+				GetComponent(date).action = true;
 			}
 			if (GetComponent(date).pos == 23) {
-				GetComponent(date).vocal = "Spider looks up at you, confused.";
+				GetComponent(date).vocal = "> Spider looks up at you, confused.";
+				GetComponent(date).action = true;
 			}
 			if (GetComponent(date).pos == 24) {
 				GetComponent(date).vocal = "???";
+				GetComponent(date).action = false;
 			}
 			if (GetComponent(date).pos == 25) {
 				GetComponent(date).vocal = ":(";
 			}
 			if (GetComponent(date).pos == 26) {
-				GetComponent(date).vocal = "…But you can't do it. Spider is just too cute.";
+				GetComponent(date).vocal = "> …But you can't do it. Spider is just too cute.";
+				GetComponent(date).action = true;
 			}
 			if (GetComponent(date).pos == 27) {
-				GetComponent(date).vocal = "Better to just be friends than do anything foolish.";
+				GetComponent(date).vocal = "> Better to just be friends than do anything foolish.";
+				GetComponent(date).action = true;
 			}
 
 			if (GetComponent(date).pos == 28) {
-				GetComponent(date).vocal = "You feel closer to Spider.";
+				GetComponent(date).vocal = "> You feel closer to Spider.";
+				GetComponent(date).action = true;
 			}
 			if (GetComponent(date).pos == 29) {
-				GetComponent(date).vocal = "Could a relationship between a human high school student and a spider work out in the long run?";
+				GetComponent(date).vocal = "> Could a relationship between a human high school student and a spider work out in the long run?";
+				GetComponent(date).action = true;
 			}
 			if (GetComponent(date).pos == 30) {
-				GetComponent(date).vocal = "Only time will tell…";
+				GetComponent(date).vocal = "> Only time will tell…";
+				GetComponent(date).action = true;
 			}
 			
 			if (GetComponent(date).pos == 31){
