@@ -48,7 +48,7 @@ function OnGUI () {
 	}
 	style.fontSize = Screen.width/26.53f;
 	var drawnString : String = vocal.Substring(0,textIndex);
-	GUI.Label (Rect (Screen.width/20.83f, Screen.height/1.3f,650,40),drawnString,style);
+	GUI.Label (Rect (Screen.width/20.83f, Screen.height/1.3f,Screen.width/1.14,40),drawnString,style);
 	if (Time.deltaTime > .016f && textIndex < vocal.Length){
 		textIndex++;
 	}

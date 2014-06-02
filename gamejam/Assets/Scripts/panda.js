@@ -218,7 +218,7 @@ function OnGUI() {
 				GetComponent(date).vocal = "…poor taste?";
 			}
 			if (GetComponent(date).pos == 39){
-				GetComponent(date).vocal = "You've given me new resolve, NAME.";
+				GetComponent(date).vocal = "You've given me new resolve, Cutie.";
 				GetComponent(date).dateSprite = blushSprite;
 				if (choice == 2){
 					GetComponent(date).pos = 46;
@@ -228,7 +228,7 @@ function OnGUI() {
 				GetComponent(date).vocal = "Perhaps my dream isn't so far-fetched after all.";
 			}
 			if (GetComponent(date).pos == 41){
-				GetComponent(date).vocal = "NAME, you seem to be quite the foodie yourself!";
+				GetComponent(date).vocal = "Cutie, you seem to be quite the foodie yourself!";
 			}
 			if (GetComponent(date).pos == 42){
 				GetComponent(date).vocal = "Ever thought about…";
@@ -270,19 +270,20 @@ function OnGUI() {
 				Application.LoadLevel ("map");
 			}
 		} else if (playerObject.GetComponent(player).levelPanda == 1){
-			if (GetComponent(date).pos == 1) {
-				GetComponent(date).vocal = "Hello, NAME.";
+			if (GetComponent(date).pos == 0) {
+				GetComponent(date).vocal = "Hello, Cutie.";
 				GetComponent(date).dateSprite = normalSprite;
 				GetComponent(date).bkgSprite = animalBackground;
 			}
-			if (GetComponent(date).pos == 2) {
+			if (GetComponent(date).pos == 1) {
 				GetComponent(date).vocal = "Hope you have room…";
 			}
-			if (GetComponent(date).pos == 3) {
+			if (GetComponent(date).pos == 2) {
 				GetComponent(date).vocal = "*yawn*";
 			}
-			if (GetComponent(date).pos == 4) {
+			if (GetComponent(date).pos == 3) {
 				GetComponent(date).vocal = "…for another date.";
+				GetComponent(date).dateSprite = blushSprite;
 			}
 			if (GetComponent(date).pos == 5) {
 				GetComponent(date).vocal = "> Will you spend time with Panda?";
@@ -299,15 +300,19 @@ function OnGUI() {
 			}
 			if (GetComponent(date).pos == 6) {
 				GetComponent(date).vocal = "Why don't we dine in…";
+				GetComponent(date).action = false;
+				GetComponent(date).dateSprite = normalSprite;
 			}
 			if (GetComponent(date).pos == 7) {
 				GetComponent(date).vocal = "*yawn*";
 			}
 			if (GetComponent(date).pos == 8) {
 				GetComponent(date).vocal = "…a more secluded spot?";
+				GetComponent(date).dateSprite = blushSprite;
 			}
 			if (GetComponent(date).pos == 9) {
 				GetComponent(date).vocal = "This is a favorite spot of mine.";
+				GetComponent(date).dateSprite = normalSprite;
 			}
 			if (GetComponent(date).pos == 10) {
 				GetComponent(date).vocal = "The clear water, reflecting everything off its surface…";
@@ -320,9 +325,10 @@ function OnGUI() {
 			}
 			if (GetComponent(date).pos == 13) {
 				GetComponent(date).vocal = "…the crystal blue.";
+				GetComponent(date).dateSprite = blushSprite;
 			}
 			if (GetComponent(date).pos == 14) {
-				GetComponent(date).vocal = "So, NAME, have you given it any thought?";
+				GetComponent(date).vocal = "So, Cutie, have you given it any thought?";
 				GetComponent(date).prompt = true;
 					if (GUI.Button(Rect(promptX,prompt1Y,promptW,promptH),"Yes, I have.",promptStyle)){
 						GetComponent(date).pos++;
@@ -330,7 +336,7 @@ function OnGUI() {
 						GetComponent(date).prompt = false;
 					}
 					if (GUI.Button(Rect(promptX,prompt2Y,promptW,promptH),"What are you talking about?",promptStyle)){
-						GetComponent(date).pos = 29;
+						GetComponent(date).pos = 16;
 						choice = 1;
 						GetComponent(date).prompt = false;
 					}
@@ -340,12 +346,80 @@ function OnGUI() {
 			}
 			if (GetComponent(date).pos == 16) {
 				GetComponent(date).vocal = "Oh…you don't remember?";
+				GetComponent(date).dateSprite = normalSprite;
+				if (choice == 0){
+				GetComponent(date).pos = 18;
+				}
 			}
 			if (GetComponent(date).pos == 17) {
 				GetComponent(date).vocal = "I thought you wanted to be my maitre d…";
 			}
 			if (GetComponent(date).pos == 18) {
-				GetComponent(date).vocal = "";
+				GetComponent(date).vocal = "I've been thinking about our time together.";
+			}
+			if (GetComponent(date).pos == 19) {
+				GetComponent(date).vocal = "We've only known each other for a short time, and yet…";
+			}
+			if (GetComponent(date).pos == 20) {
+				GetComponent(date).vocal = "*yawn*";
+				GetComponent(date).dateSprite = normalSprite;
+			}
+			if (GetComponent(date).pos == 21) {
+				GetComponent(date).vocal = "…you seem to understand my passion.";
+				GetComponent(date).dateSprite = blushSprite;
+			}
+			if (GetComponent(date).pos == 22) {
+				GetComponent(date).vocal = "Perhaps…you could be more than just the waitstaff?";
+			}
+			if (GetComponent(date).pos == 23) {
+				GetComponent(date).vocal = "You and I could be head chefs of our very own restaurant.";
+			}
+			if (GetComponent(date).pos == 24) {
+				GetComponent(date).vocal = "What would you want as the special of the day?";
+				GetComponent(date).prompt = true;
+					if (GUI.Button(Rect(promptX,prompt1Y,promptW,promptH),"…Love.",promptStyle)){
+						GetComponent(date).pos++;
+						choice = 0;
+						GetComponent(date).prompt = false;
+					}
+					if (GUI.Button(Rect(promptX,prompt2Y,promptW,promptH),"Fish Sticks.",promptStyle)){
+						GetComponent(date).pos = 29;
+						choice = 1;
+						GetComponent(date).prompt = false;
+					}
+			}
+			if (GetComponent(date).pos == 25) {
+				GetComponent(date).vocal = "I was hoping you'd say that.";
+			}
+			if (GetComponent(date).pos == 26) {
+				GetComponent(date).vocal = "Bears can be quite adept at cuddling, too.";
+			}
+			if (GetComponent(date).pos == 27) {
+				GetComponent(date).vocal = "Would you like to take an after-dinner nap with me?";
+			}
+			if (GetComponent(date).pos == 28) {
+				GetComponent(date).vocal = "You spend hours cuddling with Panda.";
+				GetComponent(date).action = true;
+			}
+			if (GetComponent(date).pos == 29) {
+				GetComponent(date).vocal = "You're testing me, Cutie.";
+				GetComponent(date).dateSprite = angrySprite;
+				if (choice == 0){
+				playerObject.GetComponent(player).levelPanda = 2;
+				Application.LoadLevel ("map");
+				}
+			}
+			if (GetComponent(date).pos == 30) {
+				GetComponent(date).vocal = "Could you at least act like you care about this bear?";
+			}
+			if (GetComponent(date).pos == 31) {
+				GetComponent(date).vocal = "You and Panda spend your time in silence.";
+				GetComponent(date).action = true;
+			}
+			if (GetComponent(date).pos == 32) {
+				GetComponent(date).vocal = "ouch";
+				playerObject.GetComponent(player).levelPanda = -1;
+				Application.LoadLevel ("map");
 			}
 		}
 	}

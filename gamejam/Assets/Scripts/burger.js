@@ -6,6 +6,7 @@ var angrySprite : Sprite;
 var blushSprite : Sprite;
 var costumeSprite : Sprite;
 var animalBackground : Sprite;
+var spaceBackground : Sprite;
 var choice : int;
 var promptStyle : GUIStyle;
 var promptX : float;
@@ -70,6 +71,7 @@ function OnGUI() {
 			}
 			if (GetComponent(date).pos == 8) {
 				GetComponent(date).vocal = "You awaken in the farthest reaches of space, your physical form long cast aside.";
+				GetComponent(date).bkgSprite = spaceBackground;
 			}
 			if (GetComponent(date).pos == 9) {
 				GetComponent(date).vocal = "Looking around the infinite blackness, you spot a tiny speck of light moving towards you.";
@@ -110,6 +112,7 @@ function OnGUI() {
 			}
 			if (GetComponent(date).pos == 19) {
 				GetComponent(date).vocal = "What's that? It feels as if the burger is beckoning to you.";
+				GetComponent(date).action = true;
 				GetComponent(date).dateSprite = normalSprite;
 			}
 			if (GetComponent(date).pos == 20) {
@@ -134,25 +137,31 @@ function OnGUI() {
 			}
 			if (GetComponent(date).pos == 23) {
 				GetComponent(date).vocal = "…";
+				GetComponent(date).action = false;
 			}
 			if (GetComponent(date).pos == 24) {
 				GetComponent(date).vocal = "The burger's shape shifts and stretches.";
+				GetComponent(date).action = true;
 			}
 			if (GetComponent(date).pos == 25) {
 				GetComponent(date).vocal = "What was once a tiny, delectable sandwich is now impossibly long, reaching beyond the edge of your vision.";
+				GetComponent(date).dateSprite = angrySprite;
 			}
 			if (GetComponent(date).pos == 26) {
 				GetComponent(date).vocal = "In a moment, it surges towards you, enveloping you in its delicious infinity.";
 			}
 			if (GetComponent(date).pos == 27) {
 				GetComponent(date).vocal = "…";
+				GetComponent(date).action = false;
 			}
 			if (GetComponent(date).pos == 28) {
 				GetComponent(date).vocal = "…";
 			}
 			if (GetComponent(date).pos == 29) {
 				GetComponent(date).vocal = "…You find yourself in the café, back in your own body.";
-				GetComponent(date).dateSprite = blushSprite;
+				GetComponent(date).action = true;
+				GetComponent(date).dateSprite = normalSprite;
+				GetComponent(date).bkgSprite = animalBackground;
 			}
 			if (GetComponent(date).pos == 30) {
 				GetComponent(date).vocal = "The burger sits on the table, undisturbed.";
@@ -168,9 +177,11 @@ function OnGUI() {
 			}
 			if (GetComponent(date).pos == 34) {
 				GetComponent(date).vocal = "XXXOOO CALL ME XXXOOO";
+				GetComponent(date).dateSprite = blushSprite;
 			}
 			if (GetComponent(date).pos == 35) {
 				GetComponent(date).vocal = "…Did the burger leave this for you?";
+				GetComponent(date).dateSprite = normalSprite;
 			}
 			if (GetComponent(date).pos == 36) {
 				GetComponent(date).vocal = "You leave the café.";
@@ -184,11 +195,10 @@ function OnGUI() {
 			
 			if (GetComponent(date).pos == 38) {
 				GetComponent(date).vocal = "The burger floats in front of you, silently.";
-				GetComponent(date).dateSprite = blushSprite;
+				GetComponent(date).dateSprite = angrySprite;
 			}
 			if (GetComponent(date).pos == 39) {
 				GetComponent(date).vocal = "It doesn't seem hostile, but you feel like you've…upset it somehow.";
-				GetComponent(date).dateSprite = normalSprite;
 			}
 			if (GetComponent(date).pos == 40) {
 				GetComponent(date).vocal = "Suddenly, the burger's shape shifts and stretches.";
@@ -201,13 +211,16 @@ function OnGUI() {
 			}
 			if (GetComponent(date).pos == 43) {
 				GetComponent(date).vocal = "…";
+				GetComponent(date).action = false;
 			}
 			if (GetComponent(date).pos == 44) {
 				GetComponent(date).vocal = "…";
 			}
 			if (GetComponent(date).pos == 45) {
 				GetComponent(date).vocal = "…You find yourself in the café, back in your own body.";
-				GetComponent(date).dateSprite = costumeSprite;
+				GetComponent(date).action = true;
+				GetComponent(date).dateSprite = normalSprite;
+				GetComponent(date).bkgSprite = animalBackground;
 			}
 			if (GetComponent(date).pos == 46) {
 				GetComponent(date).vocal = "The burger sits on the table, undisturbed.";
@@ -232,7 +245,6 @@ function OnGUI() {
 			if (GetComponent(date).pos == 1) {
 				GetComponent(date).vocal = "Will you go on another strange burg-related journey?";
 				GetComponent(date).action = true;
-				GetComponent(date).dateSprite = normalSprite;
 				GetComponent(date).prompt = true;
 				if (GUI.Button(Rect(promptX,prompt1Y,promptW,promptH),"Yes",promptStyle)){
 					GetComponent(date).pos = 2;
@@ -252,6 +264,7 @@ function OnGUI() {
 			}
 			if (GetComponent(date).pos == 4) {
 				GetComponent(date).vocal = "Fearing another puddle incident, you cautiously prod a finger towards the juicy beef in the center of the sandwich.";
+				GetComponent(date).dateSprite = blushSprite;
 			}
 			if (GetComponent(date).pos == 5) {
 				GetComponent(date).vocal = "…Your finger travels through the burger.";
@@ -267,6 +280,8 @@ function OnGUI() {
 			}
 			if (GetComponent(date).pos == 9) {
 				GetComponent(date).vocal = "You find yourself once again in this place beyond the stars.";
+				GetComponent(date).dateSprite = normalSprite;
+				GetComponent(date).bkgSprite = spaceBackground;
 			}
 			if (GetComponent(date).pos == 10) {
 				GetComponent(date).vocal = "There floats the burger, expectantly.";
@@ -316,6 +331,7 @@ function OnGUI() {
 			}
 			if (GetComponent(date).pos == 18) {
 				GetComponent(date).vocal = "As the burger passes through your mouth, you feel a sense of belonging like you've never experienced before.";
+				GetComponent(date).dateSprite = blushSprite;
 			}
 			if (GetComponent(date).pos == 19) {
 				GetComponent(date).vocal = "Truly, what has been broken is made whole again.";
@@ -324,7 +340,7 @@ function OnGUI() {
 				GetComponent(date).vocal = "The union between sandwich and high school student is complete.";
 			}
 			if (GetComponent(date).pos == 21) {
-				GetComponent(date).vocal = "Thank you, NAME.";
+				GetComponent(date).vocal = "Thank you, Cutie.";
 			}
 			if (GetComponent(date).pos == 22) {
 				GetComponent(date).vocal = "You've restored hope to the universe.";
@@ -334,12 +350,16 @@ function OnGUI() {
 			}
 			if (GetComponent(date).pos == 24) {
 				GetComponent(date).vocal = "…";
+				GetComponent(date).action = false;
 			}
 			if (GetComponent(date).pos == 25) {
 				GetComponent(date).vocal = "…";
 			}
 			if (GetComponent(date).pos == 26) {
 				GetComponent(date).vocal = "…You find yourself in the café, back in your own body.";
+				GetComponent(date).bkgSprite = animalBackground;
+				GetComponent(date).dateSprite = normalSprite;
+				GetComponent(date).action = true;
 			}
 			if (GetComponent(date).pos == 27) {
 				GetComponent(date).vocal = "The burger sits on the table, undisturbed.";
@@ -349,6 +369,7 @@ function OnGUI() {
 			}
 			if (GetComponent(date).pos == 29) {
 				GetComponent(date).vocal = "You bend over and place a gentle kiss upon the burger's soft bun.";
+				GetComponent(date).dateSprite = blushSprite;
 			}
 			if (GetComponent(date).pos == 30) {
 				GetComponent(date).vocal = "You feel as if you've built a relationship that will stand the test of time.";
@@ -358,7 +379,7 @@ function OnGUI() {
 			}
 			if (GetComponent(date).pos == 32) {
 				GetComponent(date).vocal = "weed";
-				playerObject.GetComponent(player).levelBurger = -1;
+				playerObject.GetComponent(player).levelBurger = 2;
 				Application.LoadLevel ("map");
 			}
 		}

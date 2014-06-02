@@ -28,16 +28,18 @@ function Start () {
 
 function OnGUI() {
 	if (GetComponent(date).currentDate == animalName){
-		action = true;
 		if (playerObject.GetComponent(player).levelSnake == 0){
 			if (GetComponent(date).pos == 0){
 				GetComponent(date).vocal = "Hey, kid.";
+				GetComponent(date).action = false;
+				GetComponent(date).dateSprite = normalSprite;
+				GetComponent(date).bkgSprite = animalBackground;
 			}
 			if (GetComponent(date).pos == 1) {
 				GetComponent(date).vocal = "What makesss you think you can kick it in the Spider Pit?";
 			}
 			if (GetComponent(date).pos == 2) {
-				GetComponent(date).vocal = "Will you spend time with Snake?";
+				GetComponent(date).vocal = "> Will you spend time with Snake?";
 				GetComponent(date).action = true;
 				GetComponent(date).prompt = true;
 				if (GUI.Button(Rect(promptX,prompt1Y,promptW,promptH),"Yes",promptStyle)){
@@ -51,6 +53,8 @@ function OnGUI() {
 			}
 			if (GetComponent(date).pos == 3) {
 				GetComponent(date).vocal = "Psss, you think you're bad as me?";
+				GetComponent(date).dateSprite = angrySprite;
+				GetComponent(date).action = false;
 			}
 			if (GetComponent(date).pos == 4) {
 				GetComponent(date).vocal = "The tall grass hides me from my prey.";
@@ -63,7 +67,7 @@ function OnGUI() {
 			}
 			if (GetComponent(date).pos == 7) {
 				GetComponent(date).vocal = "I jump out and strike!";
-				GetComponent(date).action = true;
+				GetComponent(date).dateSprite = angrySprite;
 				GetComponent(date).prompt = true;
 				if (GUI.Button(Rect(promptX,prompt1Y,promptW,promptH),"You kill them!?",promptStyle)){
 					GetComponent(date).pos++;
@@ -79,13 +83,11 @@ function OnGUI() {
 			
 			if (GetComponent(date).pos == 8) {
 				GetComponent(date).vocal = "Nah, I usually let them go.";
-				GetComponent(date).dateSprite = blushSprite;
 			}
 			if (GetComponent(date).pos == 9) {
 				GetComponent(date).vocal = "Every other animal in here is bigger than I am…";
-				GetComponent(date).dateSprite = normalSprite;
 			}
-			
+
 			if (GetComponent(date).pos == 10) {
 				if(choice == 1){
 					GetComponent(date).pos = 13;
@@ -94,9 +96,11 @@ function OnGUI() {
 			}
 			if (GetComponent(date).pos == 11) {
 				GetComponent(date).vocal = "PSSS!!";
+				GetComponent(date).dateSprite = normalSprite;
 			}
 			if (GetComponent(date).pos == 12) {
 				GetComponent(date).vocal = "I'm glad someone agreesss.";
+				GetComponent(date).dateSprite = angrySprite;
 			}
 
 			if (GetComponent(date).pos == 13) {
@@ -123,18 +127,21 @@ function OnGUI() {
 
 			if (GetComponent(date).pos == 16) {
 				GetComponent(date).vocal = "Who needss them, anyways?";
+				GetComponent(date).dateSprite = blushSprite;
 			}
 			if (GetComponent(date).pos == 17) {
 				GetComponent(date).vocal = "I'm all about that bad boy lifestyle.";
+				GetComponent(date).dateSprite = angrySprite;
 			}
 			if (GetComponent(date).pos == 18) {
 				GetComponent(date).vocal = "Sssnakesss!";
 			}
 			if (GetComponent(date).pos == 19) {
-				GetComponent(date).vocal = "Snake tries to throw up a gang sign without arms.";
+				GetComponent(date).vocal = "> Snake tries to throw up a gang sign without arms.";
+				GetComponent(date).action = true;
 			}
 			if (GetComponent(date).pos == 20) {
-				GetComponent(date).vocal = "…It doesn't work out.";
+				GetComponent(date).vocal = "> …It doesn't work out.";
 			}
 
 			if (GetComponent(date).pos == 21) {
@@ -142,13 +149,17 @@ function OnGUI() {
 					GetComponent(date).pos = 23;
 				}
 				GetComponent(date).vocal = "Are you teassing me?";
+				GetComponent(date).dateSprite = blushSprite;
+				GetComponent(date).action = false;
 			}
 			if (GetComponent(date).pos == 22) {
 				GetComponent(date).vocal = "That's pretty sssneaky. I like that.";
+				GetComponent(date).dateSprite = angrySprite;
 			}
 
 			if (GetComponent(date).pos == 23) {
 				GetComponent(date).vocal = "I've been thinking about recruiting a new gang member.";
+				GetComponent(date).action = false;
 			}
 			if (GetComponent(date).pos == 24) {
 				GetComponent(date).vocal = "Ssomeone who'ss loyal and bad to the bone!!";
@@ -175,7 +186,8 @@ function OnGUI() {
 				GetComponent(date).vocal = "Let'sss exxchange cccell numberss.";
 			}
 			if (GetComponent(date).pos == 28) {
-				GetComponent(date).vocal = "You ssspend the resst of the afternoon sssmoking with Snake.";
+				GetComponent(date).vocal = "> You ssspend the resst of the afternoon sssmoking with Snake.";
+				GetComponent(date).action = true;
 			}
 			if (GetComponent(date).pos == 29) {
 				GetComponent(date).vocal = "anus";
@@ -185,13 +197,14 @@ function OnGUI() {
 
 			if (GetComponent(date).pos == 30) {
 				GetComponent(date).vocal = "I knew it. You're jussst like the otherss.";
+				GetComponent(date).dateSprite = angrySprite;
 			}
 			if (GetComponent(date).pos == 31) {
 				GetComponent(date).vocal = "Looks like there's more than one ssnake in the grasssssss.";
-				Application.LoadLevel("map");
 			}
 			if (GetComponent(date).pos == 32) {
-				GetComponent(date).vocal = "Snake sssliters off.";
+				GetComponent(date).vocal = "> Snake sssliters off.";
+				GetComponent(date).action = true;
 			}
 			if (GetComponent(date).pos == 33) {
 				GetComponent(date).vocal = "anus2";
@@ -201,6 +214,9 @@ function OnGUI() {
 		}else if (playerObject.GetComponent(player).levelSnake == 1){
 			if (GetComponent(date).pos == 0){
 				GetComponent(date).vocal = "Ssso…Want to sspend ssome time together?";
+				GetComponent(date).action = false;
+				GetComponent(date).dateSprite = normalSprite;
+				GetComponent(date).bkgSprite = animalBackground;
 			}
 			if (GetComponent(date).pos == 1) {
 				GetComponent(date).vocal = "Will you ssspend time with Snake?";
@@ -217,9 +233,12 @@ function OnGUI() {
 			}
 			if (GetComponent(date).pos == 2) {
 				GetComponent(date).vocal = "I'm sso glad you can ssspare ssome time to ssee me.";
+				GetComponent(date).dateSprite = blushSprite;
+				GetComponent(date).action = false;
 			}
 			if (GetComponent(date).pos == 3) {
 				GetComponent(date).vocal = "There they are. Thossse jerksss.";
+				GetComponent(date).dateSprite = angrySprite;
 			}
 			if (GetComponent(date).pos == 4) {
 				GetComponent(date).vocal = "Hippo, Giraffe, and Elephant: The Biggest Jerks In The Animal Kingdom.";
@@ -236,7 +255,7 @@ function OnGUI() {
 				if (GUI.Button(Rect(promptX,prompt2Y,promptW,promptH),"Let'ss get 'em.",promptStyle)){
 					GetComponent(date).prompt = false;
 					choice = 2;
-					GetComponent(date).pos = 9
+					GetComponent(date).pos = 9;
 				}
 			}
 
@@ -258,7 +277,8 @@ function OnGUI() {
 			}
 
 			if (GetComponent(date).pos == 10) {
-				GetComponent(date).vocal = "I have a bit of a confession to make, NAME.";
+				GetComponent(date).vocal = "I have a bit of a confession to make, Cutie.";
+				GetComponent(date).dateSprite = normalSprite;
 			}
 			if (GetComponent(date).pos == 11) {
 				GetComponent(date).vocal = "You sssee…or rather, you see…";
@@ -308,21 +328,25 @@ function OnGUI() {
 			}
 			if (GetComponent(date).pos == 22) {
 				GetComponent(date).vocal = "…What?";
+				GetComponent(date).dateSprite = blushSprite;
 			}
 			if (GetComponent(date).pos == 23) {
 				GetComponent(date).vocal = "Sssstop sstaring at me, I'm getting embarasssed…";
 			}
 			if (GetComponent(date).pos == 24) {
-				GetComponent(date).vocal = "You wrap Snake around your neck and pull him in for a slithery smooch.";
+				GetComponent(date).vocal = "> You wrap Snake around your neck and pull him in for a slithery smooch.";
+				GetComponent(date).action = true;
 			}
 			if (GetComponent(date).pos == 25) {
 				GetComponent(date).vocal = "Sssssay…that'sssss not bad.";
+				GetComponent(date).action = false;
 			}
 			if (GetComponent(date).pos == 26) {
 				GetComponent(date).vocal = "Hope you don't mind tongue…";
 			}
 			if (GetComponent(date).pos == 27) {
-				GetComponent(date).vocal = "You and Snake sssslither around for a while.";
+				GetComponent(date).vocal = "> You and Snake sssslither around for a while.";
+				GetComponent(date).action = true;
 			}
 			if (GetComponent(date).pos == 28) {
 				GetComponent(date).vocal = "dick";
@@ -332,6 +356,8 @@ function OnGUI() {
 
 			if (GetComponent(date).pos == 29) {
 				GetComponent(date).vocal = "Are you serious?";
+				GetComponent(date).dateSprite = angrySprite;
+				GetComponent(date).action = false;
 			}
 			if (GetComponent(date).pos == 30) {
 				GetComponent(date).vocal = "I shed my layers in front of you and all you can do issss mock me?";
@@ -343,7 +369,8 @@ function OnGUI() {
 				GetComponent(date).vocal = "I'm out of here.";
 			}
 			if (GetComponent(date).pos == 33) {
-				GetComponent(date).vocal = "Snake sslithers away.";
+				GetComponent(date).vocal = "> Snake sslithers away.";
+				GetComponent(date).action = true;
 			}
 			if (GetComponent(date).pos == 34) {
 				GetComponent(date).vocal = "dick";

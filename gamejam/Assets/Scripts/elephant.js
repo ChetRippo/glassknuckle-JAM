@@ -28,7 +28,7 @@ function Start () {
 
 function OnGUI() {
 	if (GetComponent(date).currentDate == animalName){
-		action = true;
+		GetComponent(date).action = false;
 		if (playerObject.GetComponent(player).levelElephant == 0){
 			if (GetComponent(date).pos == 0){
 				GetComponent(date).vocal = "O-oh! Y-y-you st-startled me.";
@@ -40,7 +40,7 @@ function OnGUI() {
 				GetComponent(date).dateSprite = blushSprite;
 			}
 			if (GetComponent(date).pos == 2) {
-				GetComponent(date).vocal = "Will you spend time with Elephant?";
+				GetComponent(date).vocal = "> Will you spend time with Elephant?";
 				GetComponent(date).action = true;
 				GetComponent(date).prompt = true;
 				if (GUI.Button(Rect(promptX,prompt1Y,promptW,promptH),"Yes",promptStyle)){
@@ -54,20 +54,23 @@ function OnGUI() {
 			}
 			if (GetComponent(date).pos == 3) {
 				GetComponent(date).vocal = "W-w-w-with m-me? Er…ah–alright.";
-				GetComponent(date).dateSprite = normalSprite;
+				GetComponent(date).action = false;
 			}
 			if (GetComponent(date).pos == 4) {
 				GetComponent(date).vocal = "S-so…what brings you t-t-to the zoo?";
 			}
 			if (GetComponent(date).pos == 5) {
-				GetComponent(date).vocal = "You tell Elephant about your predicament, and your search for love.";
+				GetComponent(date).vocal = "> You tell Elephant about your predicament, and your search for love.";
+				GetComponent(date).dateSprite = normalSprite;
+				GetComponent(date).action = true;
 			}
 			if (GetComponent(date).pos == 6) {
 				GetComponent(date).vocal = "L-l-l-love?!";
+				GetComponent(date).dateSprite = blushSprite;
+				GetComponent(date).action = false;
 			}
 			if (GetComponent(date).pos == 7) {
 				GetComponent(date).vocal = "Oh, you're searching too, h-huh…";
-				GetComponent(date).action = true;
 				GetComponent(date).prompt = true;
 				if (GUI.Button(Rect(promptX,prompt1Y,promptW,promptH),"Yeah, I guess I am.",promptStyle)){
 					GetComponent(date).pos++;
@@ -83,7 +86,6 @@ function OnGUI() {
 			
 			if (GetComponent(date).pos == 8) {
 				GetComponent(date).vocal = "I'm s-s-sorry to hear that.";
-				GetComponent(date).dateSprite = blushSprite;
 			}
 			if (GetComponent(date).pos == 9) {
 				GetComponent(date).vocal = "I mean, I f-figured someone like you would a-a-already have s-s-someone…";
@@ -91,20 +93,24 @@ function OnGUI() {
 			}
 			
 			if (GetComponent(date).pos == 10) {
-				GetComponent(date).vocal = "B) O-oh!! I-I-I-I didn't mean th-that I-I-I was t-t-t-too, I only m-m-m-meant…";
+				GetComponent(date).vocal = "O-oh!! I-I-I-I didn't mean th-that I-I-I was t-t-t-too, I only m-m-m-meant…";
+				GetComponent(date).dateSprite = blushSprite;
 				if(choice == 1){
 					GetComponent(date).pos = 12;
 				}
 			}
 			if (GetComponent(date).pos == 11) {
-				GetComponent(date).vocal = "Elephant begins stammering and stuttering.";
+				GetComponent(date).vocal = "> Elephant begins stammering and stuttering.";
+				GetComponent(date).action = true;
 			}
 
 			if (GetComponent(date).pos == 12) {
-				GetComponent(date).vocal = "It only takes a few sentences of basic conversation to cause Elephant's cheeks to reach full bloom.";
+				GetComponent(date).vocal = "> It only takes a few sentences of basic conversation to cause Elephant's cheeks to reach full bloom.";
+				GetComponent(date).action = true;
 			}
 			if (GetComponent(date).pos == 13) {
 				GetComponent(date).vocal = "I'm s-s-sorry, I'm such a m-mess when it comes t-t-to these things…";
+				GetComponent(date).action = false;
 			}
 			if (GetComponent(date).pos == 14) {
 				GetComponent(date).vocal = "You s-s-see, I'm not u-used to my enorm-mous size, and I'm always feeling uncomfortable around others.";
@@ -113,22 +119,24 @@ function OnGUI() {
 				GetComponent(date).vocal = "E-e-especially s-s-s-someone like you…";
 			}
 			if (GetComponent(date).pos == 16) {
-				GetComponent(date).vocal = "There is a moment of awkward silence between you and Elephant.";
+				GetComponent(date).vocal = "> There is a moment of awkward silence between you and Elephant.";
+				GetComponent(date).action = true;
 			}
 			if (GetComponent(date).pos == 17) {
-				GetComponent(date).vocal = "…That is, until Elephant realizes what he just implied.";
+				GetComponent(date).vocal = "> …That is, until Elephant realizes what he just implied.";
 			}
 			if (GetComponent(date).pos == 18) {
-				GetComponent(date).vocal = "The poor animal's face turns white as a sheet.";
+				GetComponent(date).vocal = "> The poor animal's face turns white as a sheet.";
+				GetComponent(date).dateSprite = normalSprite;
 			}
 			if (GetComponent(date).pos == 19) {
-				GetComponent(date).vocal = "As Elephant takes on a look of sheer horror, his face begins to tint blue.";
+				GetComponent(date).vocal = "> As Elephant takes on a look of sheer horror, his face begins to tint blue.";
 			}
 			if (GetComponent(date).pos == 20) {
-				GetComponent(date).vocal = "It would seem Elephant is so embarassed that he can't find the strength to breathe.";
+				GetComponent(date).vocal = "> It would seem Elephant is so embarassed that he can't find the strength to breathe.";
 			}
 			if (GetComponent(date).pos == 21) {
-				GetComponent(date).vocal = "…This is bad! Say something, quick!";
+				GetComponent(date).vocal = "> …This is bad! Say something, quick!";
 				GetComponent(date).action = true;
 				GetComponent(date).prompt = true;
 				if (GUI.Button(Rect(promptX,prompt1Y,promptW,promptH),"Hey, no harm done.",promptStyle)){
@@ -153,69 +161,81 @@ function OnGUI() {
 				if(choice != 1){
 					GetComponent(date).pos = 31;
 				}
-				GetComponent(date).vocal = "A) Elephant relaxes slightly.";
+				GetComponent(date).vocal = "> Elephant relaxes slightly.";
+				GetComponent(date).action = true;
 			}
 			if (GetComponent(date).pos == 23) {
 				GetComponent(date).vocal = "S-s-sorry about that. It's just th-that I get very f-flustered, v-very easily.";
+				GetComponent(date).action = false;
 			}
 			
 			if (GetComponent(date).pos == 24) {
 				if(choice != 2){
 					GetComponent(date).pos = 31;
 				}
-				GetComponent(date).vocal = "B) W-W-W-What?! W-W-W-W-Why would you say s-s-something like that?";
+				GetComponent(date).vocal = "W-W-W-What?! W-W-W-W-Why would you say s-s-something like that?";
+				GetComponent(date).dateSprite = blushSprite;
+				GetComponent(date).action = false;
 			}
 			if (GetComponent(date).pos == 25) {
-				GetComponent(date).vocal = "Despite Elephant's confusion, he has started breathing again.";
+				GetComponent(date).vocal = "> Despite Elephant's confusion, he has started breathing again.";
+				GetComponent(date).dateSprite = normalSprite;
+				GetComponent(date).action = true;
 			}
-			
 			if (GetComponent(date).pos == 26) {
 				if(choice != 3){
 					GetComponent(date).pos = 31;
 				}
-				GetComponent(date).vocal = "C) AHHH!!!!!!!!";
+				GetComponent(date).vocal = "AHHH!!!!!!!!";
+				GetComponent(date).action = false;
 			}
 			if (GetComponent(date).pos == 27) {
-				GetComponent(date).vocal = "Elephant spins around at high velocity and runs as fast as he can from you.";
+				GetComponent(date).vocal = "> Elephant spins around at high velocity and runs as fast as he can from you.";
+				GetComponent(date).action = true;
 			}
 			if (GetComponent(date).pos == 28) {
-				GetComponent(date).vocal = "That was mean…";
+				GetComponent(date).vocal = "> That was mean…";
 			}
 			if (GetComponent(date).pos == 29) {
-				GetComponent(date).vocal = "Still, what a speedy elephant! You're sure that he'll get over his shyness someday, on his own.";
+				GetComponent(date).vocal = "> Still, what a speedy elephant! You're sure that he'll get over his shyness someday, on his own.";
 			}
 			if (GetComponent(date).pos == 30) {
-				GetComponent(date).vocal = "You decide to head back and search for a stronger, more confident animal to romance..";
+				GetComponent(date).vocal = "> You decide to head back and search for a stronger, more confident animal to romance..";
 				playerObject.GetComponent(player).levelElephant = -1;
 				Application.LoadLevel("map");
 			}
 			
 			if (GetComponent(date).pos == 31) {
 				GetComponent(date).vocal = "S-s-sorry about the outburst. You r-r-really do seem like a nice p-person.";
+				GetComponent(date).action = false;
 			}
 			if (GetComponent(date).pos == 32) {
-				GetComponent(date).vocal = "It's clear that a relationship with Elephant may be an uphill struggle.";
+				GetComponent(date).vocal = "> It's clear that a relationship with Elephant may be an uphill struggle.";
+				GetComponent(date).action = true;
 			}
 			if (GetComponent(date).pos == 33) {
-				GetComponent(date).vocal = "However, you have a thing for easily embarrassed, stammering kohai types.";
+				GetComponent(date).vocal = "> However, you have a thing for easily embarrassed, stammering kohai types.";
 			}
 			if (GetComponent(date).pos == 34) {
-				GetComponent(date).vocal = "You decide to ask Elephant on a date.";
+				GetComponent(date).vocal = "> You decide to ask Elephant on a date.";
 			}
 			if (GetComponent(date).pos == 35) {
-				GetComponent(date).vocal = "Elephant tries to agree calmly, but only manages to shake his head vigorously up and down in agreement.";
+				GetComponent(date).vocal = "> Elephant tries to agree calmly, but only manages to shake his head vigorously up and down in agreement.";
+				GetComponent(date).dateSprite = blushSprite;
 			}
 			if (GetComponent(date).pos == 36) {
-				GetComponent(date).vocal = "You let Elephant collect his breath and wave goodbye.";
+				GetComponent(date).vocal = "> You let Elephant collect his breath and wave goodbye.";
 			}
 			if (GetComponent(date).pos == 37){
 				GetComponent(date).vocal = "fuggin piss";
 				playerObject.GetComponent(player).levelElephant = 1;
+				GetComponent(date).pos = 0;
 				Application.LoadLevel("map");
 			}
 		}else if (playerObject.GetComponent(player).levelElephant == 1){
 			if (GetComponent(date).pos == 0){
 				GetComponent(date).vocal = "H-hey.";
+				GetComponent(date).dateSprite = normalSprite;
 				GetComponent(date).bkgSprite = animalBackground;
 			}
 			if (GetComponent(date).pos == 1) {
@@ -236,16 +256,18 @@ function OnGUI() {
 			}
 			if (GetComponent(date).pos == 3) {
 				GetComponent(date).vocal = "(Be gentle.)";
-				GetComponent(date).dateSprite = normalSprite;
+				GetComponent(date).action = true;
 			}
 			if (GetComponent(date).pos == 4) {
 				GetComponent(date).vocal = "W-w-well…here we are. At the pools.";
+				GetComponent(date).action = false;
 			}
 			if (GetComponent(date).pos == 5) {
 				GetComponent(date).vocal = "….A-a-a-a-a-a-a-a-a-a-a-aa-a-a-a-a-a-a-a-a-a-aa-a-a-aaaaa-a-a-alone.";
 			}
 			if (GetComponent(date).pos == 6) {
 				GetComponent(date).vocal = "Time crawls to a standstill. Elephant seems nervous, but your calm attitude helps to steady him.";
+				GetComponent(date).dateSprite = blushSprite;
 			}
 			if (GetComponent(date).pos == 7) {
 				GetComponent(date).vocal = "T-t-thanks for asking me out. You p-p-probably know this, but this is the f-first time I've done something like this.";
@@ -258,10 +280,10 @@ function OnGUI() {
 			}
 			if (GetComponent(date).pos == 10) {
 				GetComponent(date).vocal = "My mother would bathe me every day, while the heat of the summer sun beat down on my neck.";
+				GetComponent(date).dateSprite = normalSprite;
 			}
 			if (GetComponent(date).pos == 11) {
 				GetComponent(date).vocal = "I really enjoyed those carefree days. Even though I'm not a baby anymore, I still like to look out on the water and think of those days gone by…";
-				GetComponent(date).action = true;
 				GetComponent(date).prompt = true;
 				if (GUI.Button(Rect(promptX,prompt1Y,promptW,promptH),"You've stopped stuttering...",promptStyle)){
 					GetComponent(date).pos++;
@@ -276,21 +298,26 @@ function OnGUI() {
 			}
 
 			if (GetComponent(date).pos == 12) {
-				GetComponent(date).vocal = "A) H-have I? Ha, I guess I have c-calmed down considerably.";
+				GetComponent(date).vocal = "H-have I? Ha, I guess I have c-calmed down considerably.";
+				GetComponent(date).dateSprite = blushSprite;
+				GetComponent(date).action = false;
 			}
 			
 			if (GetComponent(date).pos == 13) {
 				if(choice == 1){
 					GetComponent(date).pos = 15;
 				}
-				GetComponent(date).vocal = "B) You think s-so? Thanks.";
+				GetComponent(date).vocal = "You think s-so? Thanks.";
+				GetComponent(date).action = false;
 			}
 			if (GetComponent(date).pos == 14) {
 				GetComponent(date).vocal = "I'm not usually one f-f-for big speeches, b-b-but I'm always th-th-thinking of what I would end up saying if I ever ended up speaking up…";
+				GetComponent(date).dateSprite = blushSprite;
 			}
 			
 			if (GetComponent(date).pos == 15) {
 				GetComponent(date).vocal = "I've been thinking about our first encounter, and what good it did me.";
+				GetComponent(date).dateSprite = normalSprite;
 			}
 			if (GetComponent(date).pos == 16) {
 				GetComponent(date).vocal = "There's no use in me getting worked up over something so trivial as a cute high school student talking to me.";
@@ -300,59 +327,64 @@ function OnGUI() {
 			}
 			if (GetComponent(date).pos == 18) {
 				GetComponent(date).vocal = "You s-see…I really like you…S-S-Senpai.";
+				GetComponent(date).dateSprite = blushSprite;
 			}
 			if (GetComponent(date).pos == 19) {
-				GetComponent(date).vocal = "Elephant just used the 'S-word'. That pretty much settles it.";
+				GetComponent(date).vocal = "> Elephant just used the 'S-word'. That pretty much settles it.";
+				GetComponent(date).action = true;
 			}
 			if (GetComponent(date).pos == 20) {
-				GetComponent(date).vocal = "You decide to make your move.";
+				GetComponent(date).vocal = "> You decide to make your move.";
 			}
 			if (GetComponent(date).pos == 21) {
-				GetComponent(date).vocal = "Approaching slowly so as not to upset him, you wrap one arm around Elephant's curled trunk.";
+				GetComponent(date).vocal = "> Approaching slowly so as not to upset him, you wrap one arm around Elephant's curled trunk.";
 			}
-			
-			
 			if (GetComponent(date).pos == 22) {
-				GetComponent(date).vocal = "You feel his muscles tense up, but you calmly pet his trunk, shushing him.";
+				GetComponent(date).vocal = "> You feel his muscles tense up, but you calmly pet his trunk, shushing him.";
 			}
 			if (GetComponent(date).pos == 23) {
-				GetComponent(date).vocal = "As Elephant relaxes, you tilt your head upwards and plant a gentle kiss on his ear.";
+				GetComponent(date).vocal = "> As Elephant relaxes, you tilt your head upwards and plant a gentle kiss on his ear.";
 			}
 			
 			if (GetComponent(date).pos == 24) {
-				GetComponent(date).vocal = "Blushing furiously, the young animal buries his head in your shoulder. You can feel the heat from his cheeks radiating against your chest.";
+				GetComponent(date).vocal = "> Blushing furiously, the young animal buries his head in your shoulder. You can feel the heat from his cheeks radiating against your chest.";
 			}
 			if (GetComponent(date).pos == 25) {
 				GetComponent(date).vocal = "I…I-I'm so happy, Senpai…";
+				GetComponent(date).action = false;
 			}
 			
 			if (GetComponent(date).pos == 26) {
 				GetComponent(date).vocal = "T-t-thank you for being so understanding. I-I…I think I can take it from here.";
 			}
 			if (GetComponent(date).pos == 27) {
-				GetComponent(date).vocal = "In a hormone-fuelled burst of courage, Elephant wraps his trunk around your shoulders and pulls you in close, closer than you two have ever been before.";
+				GetComponent(date).vocal = "> In a hormone-fuelled burst of courage, Elephant wraps his trunk around your shoulders and pulls you in close, closer than you two have ever been before.";
+				GetComponent(date).action = true;
 			}
 			if (GetComponent(date).pos == 28) {
-				GetComponent(date).vocal = "Before you have a chance to react or protest, he places his mouth on yours.";
+				GetComponent(date).vocal = "> Before you have a chance to react or protest, he places his mouth on yours.";
 			}
 			if (GetComponent(date).pos == 29) {
-				GetComponent(date).vocal = "...While neither of you are skilled kissers, you can feel the passion behind Elephant's actions.";
+				GetComponent(date).vocal = "> ...While neither of you are skilled kissers, you can feel the passion behind Elephant's actions.";
 			}
 			if (GetComponent(date).pos == 30) {
-				GetComponent(date).vocal = "He's honest and sweet–the definition of 'young love'.";
+				GetComponent(date).vocal = "> He's honest and sweet–the definition of 'young love'.";
 			}
 			
 			if (GetComponent(date).pos == 31) {
-				GetComponent(date).vocal = "You can also feel the poor kid trembling as he pulls away from you.";
+				GetComponent(date).vocal = "> You can also feel the poor guy trembling as he pulls away from you.";
 			}
 			if (GetComponent(date).pos == 32) {
 				GetComponent(date).vocal = "W-w-w-wow. That was v-v-very n-n-n-nice.";
+				GetComponent(date).action = false;
 			}
 			if (GetComponent(date).pos == 33) {
-				GetComponent(date).vocal = "The two of you smile as Elephant pulls you in close once again.";
+				GetComponent(date).vocal = "> The two of you smile as Elephant pulls you in close once again.";
+				GetComponent(date).action = true;
 			}
 			if (GetComponent(date).pos == 34) {
 				GetComponent(date).vocal = "And please…feel free to call me by the nickname my mother gave me.";
+				GetComponent(date).action = false;
 			}
 			if (GetComponent(date).pos == 35) {
 				GetComponent(date).vocal = "…'Elphy'…";

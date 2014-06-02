@@ -1,14 +1,11 @@
 ﻿<Properties>
-  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="MonoDevelop.Default" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/player.js">
+  <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/panda.js">
     <Files>
-      <File FileName="Assets/Scripts/panda.js" Line="345" Column="72" />
-      <File FileName="Assets/Scripts/date.js" Line="36" Column="2" />
-      <File FileName="Assets/Scripts/animal.js" Line="8" Column="24" />
-      <File FileName="Assets/Scripts/player.js" Line="5" Column="27" />
-      <File FileName="Assets/mapNav.js" Line="63" Column="76" />
-      <File FileName="Assets/dolphin.js" Line="318" Column="5" />
-      <File FileName="Assets/Scripts/titleScreen.js" Line="16" Column="2" />
+      <File FileName="Assets/Scripts/date.js" Line="30" Column="72" />
+      <File FileName="Assets/Scripts/player.js" Line="2" Column="16" />
+      <File FileName="Assets/mapNav.js" Line="107" Column="59" />
+      <File FileName="Assets/Scripts/panda.js" Line="10" Column="28" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

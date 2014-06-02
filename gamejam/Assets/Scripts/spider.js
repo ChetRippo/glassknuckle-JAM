@@ -31,6 +31,8 @@ function OnGUI() {
 		if (playerObject.GetComponent(player).levelSpider == 0){
 			if (GetComponent(date).pos == 0){
 				GetComponent(date).vocal = "???";
+				GetComponent(date).dateSprite = normalSprite;
+				GetComponent(date).bkgSprite = animalBackground;
 			}
 			if (GetComponent(date).pos == 1) {
 				GetComponent(date).vocal = "> Will you spend time with Spider?";
@@ -104,6 +106,7 @@ function OnGUI() {
 			}
 			if (GetComponent(date).pos == 13) {
 				GetComponent(date).vocal = ":)";
+				GetComponent(date).dateSprite = blushSprite;
 			}
 			if (GetComponent(date).pos == 14) {
 				GetComponent(date).vocal = "> You feel a deeper connection with Spider.";
@@ -134,6 +137,7 @@ function OnGUI() {
 			}
 			if (GetComponent(date).pos == 18) {
 				GetComponent(date).vocal = "……";
+				GetComponent(date).dateSprite = normalSprite;
 				GetComponent(date).action = false;
 			}
 			if (GetComponent(date).pos == 19) {
@@ -150,6 +154,7 @@ function OnGUI() {
 			}
 			if (GetComponent(date).pos == 23) {
 				GetComponent(date).vocal = ";)";
+				GetComponent(date).dateSprite = blushSprite;
 			}
 			if (GetComponent(date).pos == 24) {
 				GetComponent(date).vocal = ":* ~~~";
@@ -181,6 +186,7 @@ function OnGUI() {
 			}
 			if (GetComponent(date).pos == 31) {
 				GetComponent(date).vocal = ":(";
+				GetComponent(date).dateSprite = angrySprite;
 			}
 			if (GetComponent(date).pos == 32) {
 				GetComponent(date).vocal = "!!!!!!";
@@ -209,6 +215,8 @@ function OnGUI() {
 			if (GetComponent(date).pos == 0){
 				GetComponent(date).vocal = "….";
 				GetComponent(date).action = false;
+				GetComponent(date).dateSprite = normalSprite;
+				GetComponent(date).bkgSprite = animalBackground;
 			}
 			if (GetComponent(date).pos == 1) {
 				GetComponent(date).vocal = ":3";
@@ -239,6 +247,7 @@ function OnGUI() {
 			}
 			if (GetComponent(date).pos == 6) {
 				GetComponent(date).vocal = ";)";
+				GetComponent(date).dateSprite = blushSprite;
 			}
 			if (GetComponent(date).pos == 7) {
 				GetComponent(date).vocal = "> Uhoh…You get the feeling that Spider wants to forge a tryst.";
@@ -253,7 +262,7 @@ function OnGUI() {
 				GetComponent(date).action = true;
 			}
 			if (GetComponent(date).pos == 10) {
-				GetComponent(date).vocal = "> …NAME, WHAT WILL YOU DO?!";
+				GetComponent(date).vocal = "> …CUTIE, WHAT WILL YOU DO?!";
 				GetComponent(date).action = true;
 				GetComponent(date).prompt = true;
 				if (GUI.Button(Rect(promptX,prompt1Y,promptW,promptH),"Go for it.",promptStyle)){
@@ -266,10 +275,10 @@ function OnGUI() {
 					choice = 2;
 					GetComponent(date).pos = 15;
 				}
-				if (GUI.Button(Rect(promptX,prompt2Y,promptW,promptH),"Panic! Resort to murder!",promptStyle)){
+				if (GUI.Button(Rect(promptX,prompt3Y,promptW,promptH),"Panic! Resort to murder!",promptStyle)){
 					GetComponent(date).prompt = false;
 					choice = 3;
-					GetComponent(date).pos = 13;
+					GetComponent(date).pos = 22;
 				}
 			}
 
@@ -293,7 +302,8 @@ function OnGUI() {
 				if(choice == 1){
 					GetComponent(date).pos = 28;
 				}
-				GetComponent(date).vocal = "????"
+				GetComponent(date).vocal = "????";
+				GetComponent(date).dateSprite = normalSprite;
 				GetComponent(date).action = false;
 			}
 			if (GetComponent(date).pos == 16) {
@@ -338,6 +348,7 @@ function OnGUI() {
 			}
 			if (GetComponent(date).pos == 25) {
 				GetComponent(date).vocal = ":(";
+				GetComponent(date).dateSprite = angrySprite;
 			}
 			if (GetComponent(date).pos == 26) {
 				GetComponent(date).vocal = "> …But you can't do it. Spider is just too cute.";
