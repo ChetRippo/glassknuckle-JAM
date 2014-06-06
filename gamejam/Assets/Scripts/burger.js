@@ -1,6 +1,7 @@
 ﻿#pragma strict
 var playerObject : GameObject;
 var animalName : String = "Burger";
+var spaceClip : AudioClip;
 var normalSprite : Sprite;
 var angrySprite : Sprite;
 var blushSprite : Sprite;
@@ -72,6 +73,8 @@ function OnGUI() {
 			if (GetComponent(date).pos == 8) {
 				GetComponent(date).vocal = "You awaken in the farthest reaches of space, your physical form long cast aside.";
 				GetComponent(date).bkgSprite = spaceBackground;
+				GetComponent(date).bkgLoop.clip = spaceClip;
+				GetComponent(date).bkgLoop.Play();
 			}
 			if (GetComponent(date).pos == 9) {
 				GetComponent(date).vocal = "Looking around the infinite blackness, you spot a tiny speck of light moving towards you.";
@@ -282,6 +285,8 @@ function OnGUI() {
 				GetComponent(date).vocal = "You find yourself once again in this place beyond the stars.";
 				GetComponent(date).dateSprite = normalSprite;
 				GetComponent(date).bkgSprite = spaceBackground;
+				GetComponent(date).bkgLoop.clip = spaceClip;
+				GetComponent(date).bkgLoop.Play();
 			}
 			if (GetComponent(date).pos == 10) {
 				GetComponent(date).vocal = "There floats the burger, expectantly.";

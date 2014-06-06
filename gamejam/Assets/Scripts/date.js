@@ -4,6 +4,8 @@ var player : GameObject;
 var textboxObject : GameObject;
 var dialogBox : Sprite;
 var actionBox : Sprite;
+var playClip : AudioClip;
+var bkgLoop: AudioSource;
 var action : boolean = false;
 var promptObject : GameObject;
 var style : GUIStyle;
@@ -31,6 +33,8 @@ function Start () {
 	style.normal.textColor = Color.white;
 	style.font = stylefont;
 	style.wordWrap = true;
+	var aSources = GetComponents(AudioSource);
+	bkgLoop = aSources[1];
 	promptStyle.normal.textColor = Color.white;
 	promptStyle.font = stylefont;
 	promptStyle.fontSize = Screen.width/29.53f;
@@ -55,6 +59,8 @@ function OnGUI () {
 	GUI.backgroundColor = new Color(0,0,0,0);
 	if (GUI.Button(Rect(Screen.width/70.7f,Screen.height/1.6f,Screen.width/1.03f,Screen.height/2.39f),"") && !prompt) {
 		pos++;
+		audio.clip = playClip;
+   		audio.Play();
 	}
 	if (prompt) {
 		promptObject.active = true;

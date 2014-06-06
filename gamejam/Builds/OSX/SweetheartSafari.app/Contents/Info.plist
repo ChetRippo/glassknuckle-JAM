@@ -5,30 +5,30 @@
 	<key>CFBundleDevelopmentRegion</key>
 	<string>English</string>
 	<key>CFBundleExecutable</key>
-	<string>gamejam</string>
+	<string>SweetheartSafari</string>
 	<key>CFBundleGetInfoString</key>
-	<string>Unity Player version 4.3.3f1 (c8ca9b6b9936). (c) 2013 Unity Technologies ApS. All rights reserved.</string>
+	<string>Unity Player version 4.5.0f6 (fd4616464986). (c) 2013 Unity Technologies ApS. All rights reserved.</string>
 	<key>CFBundleIconFile</key>
-	<string>UnityPlayer.icns</string>
+	<string>PlayerIcon.icns</string>
 	<key>CFBundleIdentifier</key>
-	<string>unity.DefaultCompany.gamejam</string>
+	<string>unity.Glass Knuckle.Sweetheart Safari</string>
 	<key>CFBundleInfoDictionaryVersion</key>
 	<string>6.0</string>
 	<key>CFBundleName</key>
-	<string>gamejam</string>
+	<string>SweetheartSafari</string>
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>CFBundleShortVersionString</key>
-	<string>Unity Player version 4.3.3f1</string>
+	<string>Unity Player version 4.5.0f6</string>
 	<key>CFBundleSignature</key>
 	<string>????</string>
 	<key>CFBundleVersion</key>
-	<string>4.3.3f1</string>
+	<string>4.5.0f6</string>
 	<key>NSMainNibFile</key>
 	<string>MainMenu</string>
 	<key>NSPrincipalClass</key>
 	<string>PlayerApplication</string>
 	<key>UnityBuildNumber</key>
-	<string>c8ca9b6b9936</string>
+	<string>fd4616464986</string>
 </dict>
 </plist>

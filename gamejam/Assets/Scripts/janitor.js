@@ -6,6 +6,8 @@ var angrySprite : Sprite;
 var blushSprite : Sprite;
 var costumeSprite : Sprite;
 var animalBackground : Sprite;
+var dateBackground : Sprite;
+var dateClip : AudioClip;
 var choice : int;
 var promptStyle : GUIStyle;
 var promptX : float;
@@ -34,6 +36,8 @@ function OnGUI() {
 				GetComponent(date).action = false;
 				GetComponent(date).dateSprite = normalSprite;
 				GetComponent(date).bkgSprite = animalBackground;
+				GetComponent(date).bkgLoop.clip = dateClip;
+				GetComponent(date).bkgLoop.Play();
 			}
 			if (GetComponent(date).pos == 1) {
 				GetComponent(date).vocal = "> Will you spend time with the Janitor?";
@@ -226,6 +230,8 @@ function OnGUI() {
 				GetComponent(date).action = false;
 				GetComponent(date).dateSprite = normalSprite;
 				GetComponent(date).bkgSprite = animalBackground;
+				GetComponent(date).bkgLoop.clip = dateClip;
+				GetComponent(date).bkgLoop.Play();
 			}
 			if (GetComponent(date).pos == 1) {
 				GetComponent(date).vocal = "I guess…we could go on that date.";
@@ -252,6 +258,7 @@ function OnGUI() {
 			if (GetComponent(date).pos == 5) {
 				GetComponent(date).vocal = "Well, I hope you weren't thinking that we were going out anywhere.";
 				GetComponent(date).dateSprite = normalSprite;
+				GetComponent(date).bkgSprite = dateBackground;
 			}
 			if (GetComponent(date).pos == 6) {
 				GetComponent(date).vocal = "I usually just spend time in my closet, mixing cleaning supplies and thinking about my mops…";

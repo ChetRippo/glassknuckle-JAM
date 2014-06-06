@@ -1,12 +1,14 @@
 ﻿#pragma strict
 var playerObject : GameObject;
 var animalName : String = "Giraffe";
+var spaceClip : AudioClip;
 var normalSprite : Sprite;
 var angrySprite : Sprite;
 var blushSprite : Sprite;
 var costumeSprite : Sprite;
 var animalBackground : Sprite;
 var specialBackground : Sprite;
+var dateBackground : Sprite;
 var choice : int;
 var promptStyle : GUIStyle;
 var promptX : float;
@@ -269,6 +271,7 @@ function OnGUI() {
 			}
 			if (GetComponent(date).pos == 9) {
 				GetComponent(date).vocal = "> You and Giraffe take a trip to the café.";
+				GetComponent(date).bkgSprite = dateBackground;
 				GetComponent(date).action = true;
 			}
 			if (GetComponent(date).pos == 10) {
@@ -389,6 +392,8 @@ function OnGUI() {
 			if (GetComponent(date).pos == 32) {
 				GetComponent(date).vocal = "> Is….is that the top?";
 				GetComponent(date).action = true;
+				GetComponent(date).bkgLoop.clip = spaceClip;
+				GetComponent(date).bkgLoop.Play();
 			}
 			if (GetComponent(date).pos == 33) {
 				GetComponent(date).vocal = "> Yes! You've made it!";
@@ -420,7 +425,7 @@ function OnGUI() {
 			if (GetComponent(date).pos == 39) {
 				GetComponent(date).vocal = "> Down, down, down.";
 				GetComponent(date).dateSprite = costumeSprite;
-				GetComponent(date).bkgSprite = animalBackground;
+				GetComponent(date).bkgSprite = dateBackground;
 				GetComponent(date).action = true;
 			}
 			if (GetComponent(date).pos == 40) {

@@ -6,6 +6,7 @@ var angrySprite : Sprite;
 var blushSprite : Sprite;
 var costumeSprite : Sprite;
 var animalBackground : Sprite;
+var specialBackground : Sprite;
 var choice : int;
 var promptStyle : GUIStyle;
 var promptX : float;
@@ -260,6 +261,7 @@ function OnGUI() {
 			}
 			if (GetComponent(date).pos == 4) {
 				GetComponent(date).vocal = "W-w-well…here we are. At the pools.";
+				GetComponent(date).bkgSprite = specialBackground;
 				GetComponent(date).action = false;
 			}
 			if (GetComponent(date).pos == 5) {

@@ -1,11 +1,12 @@
 ﻿<Properties>
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/panda.js">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets/Scripts/giraffe.js">
     <Files>
-      <File FileName="Assets/Scripts/date.js" Line="30" Column="72" />
+      <File FileName="Assets/Scripts/date.js" Line="62" Column="21" />
       <File FileName="Assets/Scripts/player.js" Line="2" Column="16" />
-      <File FileName="Assets/mapNav.js" Line="107" Column="59" />
-      <File FileName="Assets/Scripts/panda.js" Line="10" Column="28" />
+      <File FileName="Assets/Scripts/janitor.js" Line="39" Column="48" />
+      <File FileName="Assets/Scripts/burger.js" Line="76" Column="5" />
+      <File FileName="Assets/Scripts/giraffe.js" Line="396" Column="39" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>

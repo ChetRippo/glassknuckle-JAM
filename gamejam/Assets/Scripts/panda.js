@@ -6,6 +6,7 @@ var angrySprite : Sprite;
 var blushSprite : Sprite;
 var costumeSprite : Sprite;
 var animalBackground : Sprite;
+var specialBackground : Sprite;
 var choice : int;
 var promptStyle : GUIStyle;
 var promptX : float;
@@ -312,6 +313,7 @@ function OnGUI() {
 			}
 			if (GetComponent(date).pos == 9) {
 				GetComponent(date).vocal = "This is a favorite spot of mine.";
+				GetComponent(date).bkgSprite = specialBackground;
 				GetComponent(date).dateSprite = normalSprite;
 			}
 			if (GetComponent(date).pos == 10) {
