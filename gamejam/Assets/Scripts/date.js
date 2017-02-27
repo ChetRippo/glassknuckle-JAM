@@ -59,8 +59,8 @@ function OnGUI () {
 	GUI.backgroundColor = new Color(0,0,0,0);
 	if (GUI.Button(Rect(Screen.width/70.7f,Screen.height/1.6f,Screen.width/1.03f,Screen.height/2.39f),"") && !prompt) {
 		pos++;
-		audio.clip = playClip;
-   		audio.Play();
+		GetComponent.<AudioSource>().clip = playClip;
+   		GetComponent.<AudioSource>().Play();
 	}
 	if (prompt) {
 		promptObject.active = true;
